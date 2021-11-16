@@ -1,0 +1,40 @@
+* {background-color: cornsilk;
+}
+
+header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    color: darkmagenta;
+}
+
+h1 {
+    font-family: cursive;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 80px;
+}
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 30px 29% 30px 30%;
+}
+#red {
+    color: red;
+}
+#timer {
+    text-align: center;
+    color: grey;
+    font-size: 15px;
+}
+
+.startbtn {
+    background-color: sienna;
+    color: whitesmoke;
+    padding: 10px;
+    margin: 30px 30% 30px 45%;
+}
+.questions {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 30px 29% 30px 40%;
+}
+
