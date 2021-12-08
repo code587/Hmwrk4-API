@@ -3,6 +3,8 @@ let questionsDiv = document.querySelector("#quizquestions");
 let answers = document.querySelector(".quizanswers");
 let timerCountdown = document.querySelector("#timer");
 let timeLeft = 10
+let playAgain = document.querySelector("#startOver");
+
 
 
 const questions = [
@@ -27,7 +29,7 @@ const questions = [
         answer: "Jared Padalecki"
     }
 ]
-//remove the hide attribute to show questions.  Timer begins and start button is hidden
+//remove the hide attribute to show questions and timer begins
 startBtn.addEventListener("click", function() {
     questionsDiv.removeAttribute("class")
     let questions = 0
@@ -42,8 +44,9 @@ startBtn.addEventListener("click", function() {
     timeLeft--;
     } 
     else { 
-            timerCountdown.textContent = "";
+            timerCountdown.textContent = "Game Over! Do you wnat to play again";
             clearInterval(timerInterval);
+            questionsDiv.setAttribute("class", "hide");
         }
     }, 1000);
 
@@ -60,7 +63,7 @@ function displayQuestions(){
     let titleEl = document.getElementById("questionTitle")
     titleEl.textContent = currentQuestion.title
 
-    // display the choices as buttons
+    // display choices as buttons
 
     choicesEl.innerHTML = "";
 
@@ -75,66 +78,42 @@ function displayQuestions(){
         choiceBtn.onclick = handleQuestionClick;
     })
 };
-// this is where it indicates if user chose the correct answer and to move on to the next question
-
+// indicates if user chose the correct answer and to move on to the next question
 let correctScore = 0
-
+let score = correctScore/ questions * 100
+//let messageEL = document.querySelector("#endMessage");
 function handleQuestionClick(){
 if(this.value === questions[currentQuestionList].answer){
         correctScore ++;
           console.log("correctAnswer")
-    } else {
+    } 
+    else {
         console.log("wrongAnswer")
     }
 currentQuestionList++;
 
     if(currentQuestionList === questions.length){
+        //displayGameOver()
         questionsDiv.setAttribute("class", "hide");
         timeLeft = 0
-    console.log(correctScore);
-        quizScore(currentScore, questions.length)
         
 
-        // fire off an end quiz function handling your score and whatnot
-     
     } else {
         displayQuestions();
     }
 }
-
-function quizScore(correctAnswer, questions) {
-    let score = correctAnswer/ questions * 100
-    quizScore.textContent = "Your score is " + quizScore + "Do you want to play again?";
-    return score;
-}
-
-
+// console.log(messageEL)
+// function displayGameOver() {
+//     let messageEL = document.createElement(endMessage);
+//     messageEL.innerHTML = "Do you want to play again?"
+// }
+   
 
 
+             // fire off an end quiz function handling your score and whatnot
+     
 
 
-
-    
-
-
-
-
-
-
-    
-
-
-
-    
-    
-    
-
-
-
-    
-
-
-    
 
    
 
