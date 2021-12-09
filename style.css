@@ -1,4 +1,5 @@
 * {background-color: cornsilk;
+
 }
 
 header {
@@ -48,6 +49,20 @@ p {
     display: none;
 }
 
-
+textarea {
+    display: block;
+    margin-left: 550px;
+    background-color: hotpink;
+    text-align: center;
+}
+.saveBtn {
+    display: block;
+    margin-left: 610px;
+    margin-top: 40px;
+    border: 15px;
+    background-color: darkgreen;
+    color: white;
+    font-size: 30px;
+}
 
 

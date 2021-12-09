@@ -3,7 +3,8 @@ let questionsDiv = document.querySelector("#quizquestions");
 let answers = document.querySelector(".quizanswers");
 let timerCountdown = document.querySelector("#timer");
 let timeLeft = 10
-let playAgain = document.querySelector("#startOver");
+let saveInitials = document.querySelector("#container");
+let playAgainbtn = document.querySelector("#startOverbtn");
 
 
 
@@ -30,6 +31,7 @@ const questions = [
     }
 ]
 //remove the hide attribute to show questions and timer begins
+
 startBtn.addEventListener("click", function() {
     questionsDiv.removeAttribute("class")
     let questions = 0
@@ -44,7 +46,8 @@ startBtn.addEventListener("click", function() {
     timeLeft--;
     } 
     else { 
-            timerCountdown.textContent = "Game Over! Do you wnat to play again";
+            timerCountdown.textContent = "Game Over! Do you wnat to play again?";
+            saveInitials.removeAttribute("class")
             clearInterval(timerInterval);
             questionsDiv.setAttribute("class", "hide");
         }
@@ -81,7 +84,7 @@ function displayQuestions(){
 // indicates if user chose the correct answer and to move on to the next question
 let correctScore = 0
 let score = correctScore/ questions * 100
-//let messageEL = document.querySelector("#endMessage");
+
 function handleQuestionClick(){
 if(this.value === questions[currentQuestionList].answer){
         correctScore ++;
@@ -93,22 +96,20 @@ if(this.value === questions[currentQuestionList].answer){
 currentQuestionList++;
 
     if(currentQuestionList === questions.length){
-        //displayGameOver()
         questionsDiv.setAttribute("class", "hide");
         timeLeft = 0
-        
-
     } else {
         displayQuestions();
     }
 }
-// console.log(messageEL)
-// function displayGameOver() {
-//     let messageEL = document.createElement(endMessage);
-//     messageEL.innerHTML = "Do you want to play again?"
-// }
-   
+// $(".saveBtn").on("click", function(event) {
+//     event.preventDefault();
+//     let userInitials = document.querySelector("#inputInitials");
+//     console.log(userInitials)
 
+//     localStorage.setItemJ
+
+// })
 
              // fire off an end quiz function handling your score and whatnot
      
