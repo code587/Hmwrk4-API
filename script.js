@@ -89,6 +89,7 @@ let score = correctScore / allQuestions * 100;
 let parsed = parseInt(correctScore, allQuestions)
 //let score = correctScore/ questions.length * 100
 
+//keeps count of answers. changes time for wrong answer
 function handleQuestionClick(){
 if(this.value === questions[currentQuestionList].answer){
         correctScore ++;
@@ -107,7 +108,7 @@ currentQuestionList++;
         displayQuestions();
     }
 }
-
+//provides quiz score 
 function quizScore (){
     //let score = correctScore / allQuestions * 100;
     let parsed = parseInt(correctScore, allQuestions)
@@ -117,7 +118,7 @@ function quizScore (){
     console.log(quizScore);
     console.log(score);
 }
-
+//loads initials and score in local storage
 saveBtn.addEventListener("click", function(event) {
     event.preventDefault();
     //let textAreaValue = inputInitials;
@@ -129,13 +130,6 @@ let saveInitials = localStorage.getItem("inputInitials");
 console.log(localStorage)
 }
 })
-// function renderLastRegistered() {
-//let textAreaValue = localStorage.getItem("inputInitials");
-// console.log(localStorage)
-// }
-
-             // fire off an end quiz function handling your score and whatnot
-     
 
 
 
