@@ -2,7 +2,7 @@ let startBtn = document.querySelector("#startbutton");
 let questionsDiv = document.querySelector("#quizquestions");
 let answers = document.querySelector(".quizanswers");
 let timerCountdown = document.querySelector("#timer");
-let timeLeft = 20
+let timeLeft = 60
 let saveInitials = document.querySelector("#container");
 let saveBtn = document.querySelector(".btn");
 let inputInitials = document.querySelector("#initials");
@@ -29,6 +29,36 @@ const questions = [
         title: "Which actor/actress met their spouse on the set?",
         choices:  ["Jenson Ackles", "Kim Rhodes", "Jared Padalecki", "Felicia Day"],
         answer: "Jared Padalecki"
+    },
+    {   
+        title: "What type of character scares Sam Winchester?",
+        choices:  ["Windegos", "Grim Reaper", "Clowns", "Children"],
+        answer: "Clowns"
+    },
+    {   
+        title: "What is the name of Sam and Dean's half-brother?",
+        choices:  ["Chuck", "Adam", "Logan", "Ben"],
+        answer: "Adam"
+    },
+    {   
+        title: "What name does Crowley have Dean saved under in his phone?",
+        choices:  ["Dean", "Moose", "not Moose", "Winchester Don't answer"],
+        answer: "not Moose"
+    },
+    {   
+        title: "Which is the name for one of the prophets?",
+        choices:  ["Trent", "Alistar", "Michael", "Kevin"],
+        answer: "Kevin"
+    },
+    {   
+        title: "What organization are the brothers legacies?",
+        choices:  ["Men of the Order", "Men of Letters", "Hunters of America", "Legacy Hunters"],
+        answer: "Men of Letters"
+    },
+    {   
+        title: "Where was the warded bunker the brothers stayed in located?",
+        choices:  ["Plains Bluff, Idaho", "Lockwood, Utah", "Salem, Oregon", "Lebanon, Kansas"],
+        answer: "Lebanon, Kansas"
     }
 ]
 //remove the hide attribute to show questions and timer begins
@@ -47,7 +77,7 @@ startBtn.addEventListener("click", function() {
     timeLeft--;
     } 
     else { 
-            timerCountdown.textContent = "Game Over. Your score is " + score + " !";
+            timerCountdown.textContent = "Game Over. Your score is " + score + " !  Input your initials below and save your score.";
             saveInitials.removeAttribute("class")
             clearInterval(timerInterval);
             questionsDiv.setAttribute("class", "hide");

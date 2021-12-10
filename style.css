@@ -39,10 +39,14 @@ p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     font-size: 20px;
+   
     /* visibility: hidden; */
 }
-.answerscontainer {
-    text-align: center;
+#quizquestions {
+    margin-left: 400px;
+}
+#questionChoices {
+    margin-left: 150px;
 }
 
 .hide{
