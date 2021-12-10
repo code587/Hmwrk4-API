@@ -16,7 +16,7 @@ When the quiz is over you can save your initials and score.
 ![Quiz screenshot](./images/Supernatural_quiz.png)
 
 ## Application link
-
+https://github.com/code587/Quiz-supernatural-challenge
 
 
 
