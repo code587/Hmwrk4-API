@@ -2,9 +2,10 @@ let startBtn = document.querySelector("#startbutton");
 let questionsDiv = document.querySelector("#quizquestions");
 let answers = document.querySelector(".quizanswers");
 let timerCountdown = document.querySelector("#timer");
-let timeLeft = 10
+let timeLeft = 20
 let saveInitials = document.querySelector("#container");
-let playAgainbtn = document.querySelector("#startOverbtn");
+let saveBtn = document.querySelector(".btn");
+let inputInitials = document.querySelector("#initials");
 
 
 
@@ -46,7 +47,7 @@ startBtn.addEventListener("click", function() {
     timeLeft--;
     } 
     else { 
-            timerCountdown.textContent = "Game Over! Do you wnat to play again?";
+            timerCountdown.textContent = "Game Over. Your score is " + score + " !";
             saveInitials.removeAttribute("class")
             clearInterval(timerInterval);
             questionsDiv.setAttribute("class", "hide");
@@ -83,7 +84,10 @@ function displayQuestions(){
 };
 // indicates if user chose the correct answer and to move on to the next question
 let correctScore = 0
-let score = correctScore/ questions * 100
+allQuestions = questions.length
+let score = correctScore / allQuestions * 100;
+let parsed = parseInt(correctScore, allQuestions)
+//let score = correctScore/ questions.length * 100
 
 function handleQuestionClick(){
 if(this.value === questions[currentQuestionList].answer){
@@ -91,25 +95,44 @@ if(this.value === questions[currentQuestionList].answer){
           console.log("correctAnswer")
     } 
     else {
+        timeLeft -= 5;
         console.log("wrongAnswer")
     }
 currentQuestionList++;
 
-    if(currentQuestionList === questions.length){
+    if(currentQuestionList === allQuestions){
         questionsDiv.setAttribute("class", "hide");
         timeLeft = 0
     } else {
         displayQuestions();
     }
 }
-// $(".saveBtn").on("click", function(event) {
-//     event.preventDefault();
-//     let userInitials = document.querySelector("#inputInitials");
-//     console.log(userInitials)
 
-//     localStorage.setItemJ
+function quizScore (){
+    //let score = correctScore / allQuestions * 100;
+    let parsed = parseInt(correctScore, allQuestions)
+    if (isNaN(parsed)) { return 0; } 
+    return parsed * 100
+    //return score;  
+    console.log(quizScore);
+    console.log(score);
+}
 
-// })
+saveBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    //let textAreaValue = inputInitials;
+    localStorage.setItem("saveInitials", "inputInitials");
+    console.log(localStorage)
+
+function renderLastRegistered() {
+let saveInitials = localStorage.getItem("inputInitials");
+console.log(localStorage)
+}
+})
+// function renderLastRegistered() {
+//let textAreaValue = localStorage.getItem("inputInitials");
+// console.log(localStorage)
+// }
 
              // fire off an end quiz function handling your score and whatnot
      

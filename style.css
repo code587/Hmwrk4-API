@@ -54,8 +54,9 @@ textarea {
     margin-left: 550px;
     background-color: hotpink;
     text-align: center;
+    font-size: larger;
 }
-.saveBtn {
+.saveButton {
     display: block;
     margin-left: 610px;
     margin-top: 40px;
