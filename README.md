@@ -13,7 +13,7 @@ It is a time coded quiz that subtracts your time if you choose an incorrect answ
 When the quiz is over you can save your initials and score.  
 
 ## Screenshot
-!(./images/Supernatural_quiz.png)
+![Quiz screenshot](./images/Supernatural_quiz.png)
 
 ## Application link
 
